@@ -1,0 +1,46 @@
+<html>
+<head>
+<link rel="stylesheet" href="dist/switchery.min.css"/>
+<link rel="stylesheet" href="dist/bootstrap.min.css">
+<link rel="stylesheet" href="dist/custom.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#03A9F4">
+<script src="dist/switchery.js"></script>
+<script src="dist/jquery-3.1.1.min.js"></script>
+</head>
+<body>
+<h1>Raspberry Pi</h1>
+</br></br></br>
+<p> Lamp
+  <input type="checkbox" id=lamp class="lamp-js-switch"/>
+<script>
+var elem = document.querySelector('.lamp-js-switch');
+var init = new Switchery(elem, { color: '#00E676', size: 'large' });
+var lampchangeCheckbox = document.querySelector('.lamp-js-switch');
+lampchangeCheckbox.onchange = function() {
+  if (lampchangeCheckbox.checked){
+    $.get("lampon.php");
+} else {
+  $.get("lampoff.php");
+  }
+};
+</script>
+</p>
+</br></br>
+<p> Mirror
+  <input type="checkbox" id=mirror class="mirror-js-switch"/>
+  <script>
+  var elem = document.querySelector('.mirror-js-switch');
+  var init = new Switchery(elem, { color: '#00E676', size: 'large' });
+  var mirrorchangeCheckbox = document.querySelector('.mirror-js-switch');
+  mirrorchangeCheckbox.onchange = function() {
+    if (mirrorchangeCheckbox.checked){
+      $.get("mirroron.php");
+  } else {
+      $.get("mirroroff.php");
+    }
+  };
+  </script>
+</p>
+</body>
+</html>
