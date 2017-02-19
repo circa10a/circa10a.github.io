@@ -3,8 +3,8 @@ var init = new Switchery(elem, { color: '#00E676', size: 'large' });
 var lampchangeCheckbox = document.querySelector('.lamp-js-switch');
 lampchangeCheckbox.onchange = function() {
   if (lampchangeCheckbox.checked){
-    $.get("lampon.php");
+    console.log("php would go here");
 } else {
-    $.get("lampoff.php");
+    console.log("php would go here");
   }
 };
