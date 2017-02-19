@@ -12,35 +12,13 @@
 <h1>Raspberry Pi</h1>
 </br></br></br>
 <p> Lamp
-  <input type="checkbox" id=lamp class="lamp-js-switch"/>
-<script>
-var elem = document.querySelector('.lamp-js-switch');
-var init = new Switchery(elem, { color: '#00E676', size: 'large' });
-var lampchangeCheckbox = document.querySelector('.lamp-js-switch');
-lampchangeCheckbox.onchange = function() {
-  if (lampchangeCheckbox.checked){
-    console.log("php would go here");
-} else {
-  console.log("php would go here");
-  }
-};
-</script>
+<input type="checkbox" id=lamp class="lamp-js-switch"/>
+<script src="js/togglelamp.js"></script>
 </p>
 </br></br>
 <p> Mirror
-  <input type="checkbox" id=mirror class="mirror-js-switch"/>
-  <script>
-  var elem = document.querySelector('.mirror-js-switch');
-  var init = new Switchery(elem, { color: '#00E676', size: 'large' });
-  var mirrorchangeCheckbox = document.querySelector('.mirror-js-switch');
-  mirrorchangeCheckbox.onchange = function() {
-    if (mirrorchangeCheckbox.checked){
-      console.log("php would go here");
-  } else {
-      console.log("php would go here");
-    }
-  };
-  </script>
+<input type="checkbox" id=mirror class="mirror-js-switch"/>
+<script src="js/togglelamp.js"></script>
 </p>
 </body>
 </html>
