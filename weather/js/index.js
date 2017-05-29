@@ -23,6 +23,7 @@ var isMobile = {
    }
 };
 
+//make mobile friendly
 if(isMobile.any()) {
   $("#search").hide();
   $("#button").hide();
@@ -37,8 +38,22 @@ navigator.geolocation.getCurrentPosition(function(position) {
   loadWeather(position.coords.latitude+','+position.coords.longitude); //load weather using your lat/lng coordinates
 });
 
+//If user presses enter, check for value then search
+$(document).keypress(function(e) {
+    if(e.which == 13) {
+      if ( !$("#search").val() ) {
+        $("#search").css("border-width", "5px");
+        $("#search").css("border-color", "red");
+      } else {
+        $.LoadingOverlay("show");
+        $("#button").click();
+        $.LoadingOverlay("hide");
+    }
+  }
+});
+//load current weather if permission was granted
 $(document).ready(function() {
-  loadWeather(); //@params location, woeid
+  loadWeather();
 });
 
 function loadWeather(location, woeid) {
@@ -53,7 +68,7 @@ function loadWeather(location, woeid) {
       html += '<ul><li>'+weather.city+', '+weather.region+'</li>'+'<br/>';
       html += '<li class="currently">'+weather.currently+'</li>'+'<br/>';;
       html += '<li>'+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+'</li></ul>';
-      
+
       $("#weather").html(html);
       $("#search").attr("placeholder", weather.city + ", " +weather.region);
 
