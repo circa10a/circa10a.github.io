@@ -53,26 +53,25 @@ function loadWeather(location, woeid) {
       html += '<ul><li>'+weather.city+', '+weather.region+'</li>'+'<br/>';
       html += '<li class="currently">'+weather.currently+'</li>'+'<br/>';;
       html += '<li>'+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+'</li></ul>';
+      
+      $("#weather").html(html);
+      $("#search").attr("placeholder", weather.city + ", " +weather.region);
+
+      $("#temp").css("font-size","200px");
+      $('li').css("font-size", "75px");
+      $('li').css("margin-bottom", "50px");
+      $('li').css("border-style", "solid");
+      $('li').css("background", "black");
+      $('li').css("color", "white");
 
     } else {
       html = '<h2 id="temp">'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
       html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
       html += '<li class="currently">'+weather.currently+'</li>';
       html += '<li>'+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+'</li></ul>';
-    }
-
       $("#weather").html(html);
       $("#search").attr("placeholder", weather.city + ", " +weather.region);
-
-      //make more mobile friendly
-      if(isMobile.any()) {
-        $("#temp").css("font-size","200px");
-        $('li').css("font-size", "75px");
-        $('li').css("margin-bottom", "50px");
-        $('li').css("border-style", "solid");
-        $('li').css("background", "black");
-        $('li').css("color", "white");
-      }
+    }
       //remove full screen overlay when weather has loaded
       $.LoadingOverlay("hide");
     },
