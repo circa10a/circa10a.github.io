@@ -1,10 +1,37 @@
 //Docs at http://simpleweatherjs.com
 // Docs at http://simpleweatherjs.com
+var isMobile = {
+   Android: function() {
+       return navigator.userAgent.match(/Android/i);
+   },
+   BlackBerry: function() {
+       return navigator.userAgent.match(/BlackBerry/i);
+   },
+   iOS: function() {
+       return navigator.userAgent.match(/iPhone|iPod/i);
+   },
+   Opera: function() {
+       return navigator.userAgent.match(/Opera Mini/i);
+   },
+   Windows: function() {
+       return navigator.userAgent.match(/IEMobile/i);
+   },
+   any: function() {
+       return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+   }
+};
 
-  navigator.geolocation.getCurrentPosition(function(position) {
-    $.LoadingOverlay("show");
-    loadWeather(position.coords.latitude+','+position.coords.longitude); //load weather using your lat/lng coordinates
-  });
+if(isMobile.any()) {
+  $("#search").hide();
+  $("#button").hide();
+} else {
+  console.log("not a mobile device");
+ }
+
+navigator.geolocation.getCurrentPosition(function(position) {
+  $.LoadingOverlay("show");
+  loadWeather(position.coords.latitude+','+position.coords.longitude); //load weather using your lat/lng coordinates
+});
 
 $(document).ready(function() {
   loadWeather(); //@params location, woeid
