@@ -1,5 +1,7 @@
 //Docs at http://simpleweatherjs.com
 // Docs at http://simpleweatherjs.com
+
+//Variable to determine if device is mobile
 var isMobile = {
    Android: function() {
        return navigator.userAgent.match(/Android/i);
@@ -24,10 +26,12 @@ var isMobile = {
 if(isMobile.any()) {
   $("#search").hide();
   $("#button").hide();
+  $("h2").css("font-size","100px");
 } else {
   console.log("not a mobile device");
  }
 
+//Show full screen overlay when getting location
 navigator.geolocation.getCurrentPosition(function(position) {
   $.LoadingOverlay("show");
   loadWeather(position.coords.latitude+','+position.coords.longitude); //load weather using your lat/lng coordinates
@@ -43,14 +47,33 @@ function loadWeather(location, woeid) {
     woeid: woeid,
     unit: 'f',
     success: function(weather) {
-      html = '<h2>'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+      //Add breaks for mobile view
+      if(isMobile.any()) {
+      html = '<h2 id="temp">'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+      html += '<ul><li>'+weather.city+', '+weather.region+'</li>'+'<br/>';
+      html += '<li class="currently">'+weather.currently+'</li>'+'<br/>';;
+      html += '<li>'+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+'</li></ul>';
+
+    } else {
+      html = '<h2 id="temp">'+weather.temp+'&deg;'+weather.units.temp+'</h2>';
       html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
       html += '<li class="currently">'+weather.currently+'</li>';
       html += '<li>'+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+'</li></ul>';
+    }
 
       $("#weather").html(html);
       $("#search").attr("placeholder", weather.city + ", " +weather.region);
 
+      //make more mobile friendly
+      if(isMobile.any()) {
+        $("#temp").css("font-size","200px");
+        $('li').css("font-size", "75px");
+        $('li').css("margin-bottom", "50px");
+        $('li').css("border-style", "solid");
+        $('li').css("background", "black");
+        $('li').css("color", "white");
+      }
+      //remove full screen overlay when weather has loaded
       $.LoadingOverlay("hide");
     },
     error: function(error) {
@@ -58,6 +81,7 @@ function loadWeather(location, woeid) {
     }
   });
 }
+
 
 $("#button").click(function() {
   $.simpleWeather({
