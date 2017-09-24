@@ -1,7 +1,9 @@
+
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<META HTTP-EQUIV="refresh" CONTENT="60">
+        <meta name="theme-color" content="#455A64">
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<script type="text/javascript" src="js/jquery/jquery-3.1.1.min.js"></script>
@@ -13,7 +15,7 @@
 	<div id="circle"><strong></strong></div>
 	<script>
 	$('#circle').circleProgress({
-		value: "0.75",
+		value: "0.5",
 		size: 350,
 		thickness: 10,
 		emptyFill: "#262b33",
@@ -22,6 +24,21 @@
 	</script>
 	<script type="text/javascript" src="js/circlesize.js"></script>
 	<script type="text/javascript" src="js/notifications.js"></script>
+	<script>
+	noty({
+    text: "Report created " + "09/24/2017 16:05:08",
+    type: 'information',
+    theme: 'metroui',
+    closeWith   : ['click'],
+    progressBar : true,
+    timeout     : 10000,
+    animation   : {
+      open  : 'animated bounceInRight',
+      close : 'animated bounceOutRight',
+      easing: 'swing',
+    }
+  });
+	</script>
 
 	<div class="table-title">
 	<h3></h3>
@@ -37,29 +54,17 @@
 	<tbody class="table-hover">
 
 		<tr>
-		<td onClick="window.open('http://www.github.com:80')";class="text-left">www.github.com port: 80</td>
-		<td><div class="led-green"></div></td>
-		<tr>
-		<td onClick="window.open('http://www.reddit.com:443')";class="text-left">www.reddit.com port: 443</td>
-		<td><div class="led-green"></div></td>
-		<tr>
-		<td onClick="window.open('http://www.google.com')";class="text-left">www.google.com</td>
-		<td><div class="led-green"></div></td>
-		<tr>
-		<td onClick="window.open('http://www.apple.com')";class="text-left">www.apple.com</td>
-		<td><div class="led-green"></div></td>
-		<tr>
-		<td onClick="window.open('http://www.github.com:81')";class="text-left">www.github.com port: 81</td>
+		<td onClick="window.open('http://www.github.com:801')";class="text-left">www.github.com port: 801</td>
 		<td><div class="led-red"></div></td>
 		<tr>
-		<td onClick="window.open('http://www.reddit.com:447')";class="text-left">www.reddit.com port: 447</td>
+		<td onClick="window.open('http://www.reddit.com:443')";class="text-left">Reddit:443</td>
+		<td><div class="led-green"></div></td>
+		<tr>
+		<td onClick="window.open('http://www.google.com:443')";class="text-left">Google:443</td>
+		<td><div class="led-green"></div></td>
+		<tr>
+		<td onClick="window.open('http://www.apple.com:443')";class="text-left">www.apple.com port: 443</td>
 		<td><div class="led-red"></div></td>
-		<tr>
-		<td onClick="window.open('http://www.google.com')";class="text-left">www.google.com</td>
-		<td><div class="led-green"></div></td>
-		<tr>
-		<td onClick="window.open('http://www.apple.com')";class="text-left">www.apple.com</td>
-		<td><div class="led-green"></div></td>
 	</tbody>
 	</table>
 </body>
