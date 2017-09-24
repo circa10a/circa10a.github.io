@@ -13,6 +13,16 @@
 </head>
 <body>
 	<div id="circle"><strong></strong></div>
+	<script>
+ 	$('#circle').circleProgress({
+ 		value: "0.5",
+ 		size: 350,
+ 		thickness: 10,
+ 		emptyFill: "#262b33",
+ 		fill: { color: ["#1BA1E2"]}
+ 	}).on('circle-animation-progress', function(event, progress, stepValue) {$(this).children('strong').text((stepValue * 100).toFixed(0) + '%');});
+ 	</script>
+ 	<script type="text/javascript" src="js/circlesize.js"></script>
 	<script type="text/javascript" src="js/notifications.js"></script>
 	<div class="table-title">
 	<h3></h3>
