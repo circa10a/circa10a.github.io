@@ -1,29 +1,45 @@
-
 <html>
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<META HTTP-EQUIV="refresh" CONTENT="60">
-        <meta name="theme-color" content="#455A64">
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/styles.css">
-	<script type="text/javascript" src="js/jquery/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" href="js/noty/lib/noty.css">
+	<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="js/circle-progress/circle-progress.min.js"></script>
-	<script type="text/javascript" src="js/noty/packaged/jquery.noty.packaged.min.js"></script>
+	<script type="text/javascript" src="js/noty/lib/noty.min.js"></script>
 	<title>Monitor Dashboard</title>
 </head>
 <body>
 	<div id="circle"><strong></strong></div>
 	<script>
- 	$('#circle').circleProgress({
- 		value: "0.5",
- 		size: 350,
- 		thickness: 10,
- 		emptyFill: "#262b33",
- 		fill: { color: ["#1BA1E2"]}
- 	}).on('circle-animation-progress', function(event, progress, stepValue) {$(this).children('strong').text((stepValue * 100).toFixed(0) + '%');});
- 	</script>
- 	<script type="text/javascript" src="js/circlesize.js"></script>
+	$('#circle').circleProgress({
+		value: "0.8",
+		size: 350,
+		thickness: 6,
+		emptyFill: "#262b33",
+		fill: { color: ["#0AB0DE"]}
+	}).on('circle-animation-progress', function(event, progress, stepValue) {$(this).children('strong').text((stepValue * 100).toFixed(0) + '%');});
+	</script>
+	<script type="text/javascript" src="js/circleColor.js"></script>
+	<script type="text/javascript" src="js/circleSize.js"></script>
 	<script type="text/javascript" src="js/notifications.js"></script>
+	<script>
+	new Noty({
+    text: "Report created " + "10/28/2017 10:59:45",
+    type: 'notification',
+    theme: 'mint',
+    closeWith   : ['click'],
+    progressBar : true,
+    timeout     : 10000,
+    animation   : {
+      open  : 'animated bounceInRight',
+      close : 'animated bounceOutRight',
+      easing: 'swing',
+    }
+  }).show();
+	</script>
+
 	<div class="table-title">
 	<h3></h3>
 	</div>
@@ -38,8 +54,11 @@
 	<tbody class="table-hover">
 
 		<tr>
-		<td onClick="window.open('http://www.github.com:801')";class="text-left">www.github.com port: 801</td>
+		<td onClick="window.open('http://Fail')";class="text-left">Fail</td>
 		<td><div class="led-red"></div></td>
+		<tr>
+		<td onClick="window.open('http://www.github.com:80')";class="text-left">GitHub:80</td>
+		<td><div class="led-green"></div></td>
 		<tr>
 		<td onClick="window.open('http://www.reddit.com:443')";class="text-left">Reddit:443</td>
 		<td><div class="led-green"></div></td>
@@ -47,8 +66,8 @@
 		<td onClick="window.open('http://www.google.com:443')";class="text-left">Google:443</td>
 		<td><div class="led-green"></div></td>
 		<tr>
-		<td onClick="window.open('http://www.apple.com:443')";class="text-left">www.apple.com port: 443</td>
-		<td><div class="led-red"></div></td>
+		<td onClick="window.open('http://www.apple.com:443')";class="text-left">Apple:443</td>
+		<td><div class="led-green"></div></td>
 	</tbody>
 	</table>
 </body>

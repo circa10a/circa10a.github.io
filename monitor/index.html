@@ -2,12 +2,12 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<META HTTP-EQUIV="refresh" CONTENT="60">
-	<meta name="theme-color" content="#455A64">
 	<link rel="stylesheet" href="css/animate.css">
 	<link rel="stylesheet" href="css/styles.css">
-	<script type="text/javascript" src="js/jquery/jquery-3.1.1.min.js"></script>
+	<link rel="stylesheet" href="js/noty/lib/noty.css">
+	<script type="text/javascript" src="js/jquery/jquery.min.js"></script>
 	<script type="text/javascript" src="js/circle-progress/circle-progress.min.js"></script>
-	<script type="text/javascript" src="js/noty/packaged/jquery.noty.packaged.min.js"></script>
+	<script type="text/javascript" src="js/noty/lib/noty.min.js"></script>
 	<title>Monitor Dashboard</title>
 </head>
 <body>
@@ -16,13 +16,29 @@
 	$('#circle').circleProgress({
 		value: "1.0",
 		size: 350,
-		thickness: 10,
+		thickness: 6,
 		emptyFill: "#262b33",
-		fill: { color: ["#1BA1E2"]}
+		fill: { color: ["#0AB0DE"]}
 	}).on('circle-animation-progress', function(event, progress, stepValue) {$(this).children('strong').text((stepValue * 100).toFixed(0) + '%');});
 	</script>
-	<script type="text/javascript" src="js/circlesize.js"></script>
+	<script type="text/javascript" src="js/circleColor.js"></script>
+	<script type="text/javascript" src="js/circleSize.js"></script>
 	<script type="text/javascript" src="js/notifications.js"></script>
+	<script>
+	new Noty({
+    text: "Report created " + "10/28/2017 10:58:46",
+    type: 'notification',
+    theme: 'mint',
+    closeWith   : ['click'],
+    progressBar : true,
+    timeout     : 10000,
+    animation   : {
+      open  : 'animated bounceInRight',
+      close : 'animated bounceOutRight',
+      easing: 'swing',
+    }
+  }).show();
+	</script>
 
 	<div class="table-title">
 	<h3></h3>
