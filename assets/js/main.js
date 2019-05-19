@@ -18,10 +18,9 @@ jQuery(document).ready(function($) {
     $('.level-label').tooltip();
 
     /* Github Calendar - https://github.com/IonicaBizau/github-calendar */
-    GitHubCalendar("#github-graph", "circa10a");
+    GitHubCalendar("#github-graph", "circa10a", { responsive: true });
 
     /* Github Activity Feed - https://github.com/caseyscarborough/github-activity */
     GitHubActivity.feed({ username: "circa10a", selector: "#ghfeed" });
-
 
 });

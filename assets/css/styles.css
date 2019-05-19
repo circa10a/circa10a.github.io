@@ -29,7 +29,8 @@ h6 {
   color: #778492;
 }
 a {
-  color: #3AAA64;
+  /* color: #3AAA64; */
+  color: #039be5;
   -webkit-transition: all 0.4s ease-in-out;
   -moz-transition: all 0.4s ease-in-out;
   -ms-transition: all 0.4s ease-in-out;
@@ -63,16 +64,18 @@ a.btn:focus {
 }
 a.btn-cta-primary,
 .btn-cta-primary {
-  background: #54ba4e;
-  border: 1px solid #54ba4e;
+  /* background: #54ba4e;
+  border: 1px solid #54ba4e; */
+  background: #2196f3;
+  border: 1px solid #2196f3;
   color: #fff;
   font-weight: 600;
   text-transform: uppercase;
 }
 a.btn-cta-primary:hover,
 .btn-cta-primary:hover {
-  background: #49ac43;
-  border: 1px solid #49ac43;
+  background: #0c88eb;
+  border: 1px solid #0c88eb;
   color: #fff;
 }
 a.btn-cta-secondary,
@@ -384,7 +387,7 @@ iframe {
 }
 .skills .skillset .level-bar-inner {
   height: 15px;
-  background: #66cb8c;
+  background: #42a5f5;
 }
 /* Testimonials section */
 .testimonials .item {
@@ -451,7 +454,7 @@ iframe {
   margin-bottom: 0;
 }
 .languages .item .fa {
-  color: #79d19a;
+  color: #42a5f5;
 }
 /* Blog Section */
 .blog .item {
