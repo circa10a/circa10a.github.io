@@ -1,0 +1,27 @@
+{
+  "backgroundType": "plain",
+  "plainBackgroundMode": "daylight",
+  "devIntro": "Hi, I am Caleb Lemoine",
+  "devDesc": "Full Stack Engineer",
+  "gradientColors": "#EE7752, #E73C7E, #23A6D5, #23D5AB",
+  "backgroundImageUrl": "http://hdwpro.com/wp-content/uploads/2017/03/Art-Background-Image.png",
+  "profilePicURL": "https://avatars0.githubusercontent.com/u/21261388?s=460&u=441afba8e25b12be7ac8ef28d493f689c38d6b4e&v=4",
+  "icons": [
+    {
+      "image": "fa-github",
+      "url": "https://github.com/circa10a"
+    },
+    {
+      "image": "fa-dev",
+      "url": "https://dev.to/circa10a"
+    },
+    {
+      "image": "fa-linkedin",
+      "url": "https://www.linkedin.com/in/caleblemoine"
+    },
+    {
+      "image": "fa-medium",
+      "url": "https://medium.com/@caleblemoine"
+    }
+  ]
+}
